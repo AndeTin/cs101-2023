@@ -17,5 +17,13 @@ int main(){
     for (int i=0;i<5;i++){
         fwrite(p+i, sizeof(person_t),1,wfp);
     }
+    fseek(wfp,0,SEEK_SET);
+    person_t tmp;
+    int i=0;
+    while (fread(&tmp, sizeof(person_t),1,wfp)){
+        printf("[%d] %d: %s %s\n", i, tmp.id,tmp.first_name,tmp.last_name);
+        i++;
+    }
     fclose(wfp);
+    
 }
