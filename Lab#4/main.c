@@ -4,7 +4,7 @@ void replace_all(char* str, char oldChar, char newChar){
         if(*str==oldChar){
             *str=newChar;
         } 
-        *str++;
+        str++;
     }
 }
 
@@ -12,7 +12,7 @@ void replace_all(char* str, char oldChar, char newChar){
 int main(){
     char str[100], oldChar = 'a', newChar = 'A';
     printf("Enter a string: ");
-    scanf("%s",&str);
+    scanf("%s",str);
 
     printf("\nString before replacing: \n%s",str);
     replace_all(str,oldChar, newChar);
