@@ -6,11 +6,15 @@ int main(){
     time_t curtime;
     time(&curtime);
     char title[]= "======== lotto666 ========\n";
-    int a[6]={0},b[6]={0},c[6]={0},d[6]={0},e[6]={0},num=0;
+    int a[6]={0},b[6]={0},c[6]={0},d[6]={0},e[6]={0};
 
     int n;
     printf("welcome歡迎光臨長庚樂透購買機台\n""請問您要買幾組樂透彩：");
     scanf("%d[0 - 5]",&n);
+    if(n>5 || n<=0){
+        printf("您的輸入有誤，請重新輸入");
+        return 0;
+    }
     //接受輸入的數字後開始亂數產生並且排序
     for(int i=0;i<n;i++){
         if(a[0]==0){
