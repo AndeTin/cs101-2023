@@ -5,8 +5,9 @@
 int main(){
     time_t curtime;
     time(&curtime);
+    srand(curtime);
     char title[]= "======== lotto666 ========\n";
-    int a[6]={0},b[6]={0},c[6]={0},d[6]={0},e[6]={0};
+    int a[7]={0},b[7]={0},c[7]={0},d[7]={0},e[7]={0},s1=0,s2=0,s3=0,s4=0,s5=0;
 
     int n;
     printf("welcome歡迎光臨長庚樂透購買機台\n""請問您要買幾組樂透彩：");
@@ -28,6 +29,7 @@ int main(){
                     a[k+1]=tmp;
                 }
             }
+            a[6]=rand()%9+1;
             continue;
         }
         else if(b[0]==0){
@@ -41,6 +43,7 @@ int main(){
                     b[k+1]=tmp;
                 }
             }
+            b[6]=rand()%9+1;
             continue;
         }
         else if(c[0]==0){
@@ -54,6 +57,7 @@ int main(){
                     c[k+1]=tmp;
                 }
             }
+            c[6]=rand()%9+1;
             continue;
         }
         else if(d[0]==0){
@@ -67,6 +71,7 @@ int main(){
                     d[k+1]=tmp;
                 }
             }
+            d[6]=rand()%9+1;
             continue;
         }
         else if(e[0]==0){
@@ -80,6 +85,7 @@ int main(){
                     e[k+1]=tmp;
                 }
             }
+            e[6]=rand()%9+1;
             continue;
         }
     }
@@ -87,11 +93,11 @@ int main(){
     FILE* fp = fopen("lotto.txt","w+");
     fprintf(fp, "%s"
                 "%s"
-                "[1]:%02d %02d %02d %02d %02d %02d\n"
-                "[2]:%02d %02d %02d %02d %02d %02d\n"
-                "[3]:%02d %02d %02d %02d %02d %02d\n"
-                "[4]:%02d %02d %02d %02d %02d %02d\n"
-                "[5]:%02d %02d %02d %02d %02d %02d\n",title,ctime(&curtime),a[0],a[1],a[2],a[3],a[4],a[5],b[0],b[1],b[2],b[3],b[4],b[5],c[0],c[1],c[2],c[3],c[4],c[5],d[0],d[1],d[2],d[3],d[4],d[5],e[0],e[1],e[2],e[3],e[4],e[5]);
+                "[1]:%02d %02d %02d %02d %02d %02d %02d\n"
+                "[2]:%02d %02d %02d %02d %02d %02d %02d\n"
+                "[3]:%02d %02d %02d %02d %02d %02d %02d\n"
+                "[4]:%02d %02d %02d %02d %02d %02d %02d\n"
+                "[5]:%02d %02d %02d %02d %02d %02d %02d\n",title,ctime(&curtime),a[0],a[1],a[2],a[3],a[4],a[5],,b[0],b[1],b[2],b[3],b[4],b[5],c[0],c[1],c[2],c[3],c[4],c[5],d[0],d[1],d[2],d[3],d[4],d[5],e[0],e[1],e[2],e[3],e[4],e[5]);
     fclose(fp);
     printf("已為您購買的 %d 組樂透書出至lotto.txt\n",n);
 
