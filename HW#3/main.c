@@ -3,15 +3,13 @@
 #include<time.h>
 //宣告結構
 typedef struct lottoa{
-    int num[5];
+    int num;
     int a[7],b[7],c[7],d[7],e[7];
 }lotto;
 
 //初始化程式
 static int init(lotto* f){
-    for(int i=0;i<5;i++){
-        f->num[i]=0;
-    }
+    f->num=1;
     for(int i=0;i<7;i++){
         f->a[i]=0;
         f->b[i]=0;
@@ -35,7 +33,7 @@ int main(){
     //初始化
     init(&p);
     
-    //printf("%d %d %d %d %d",p.num[0],p.num[1],p.num[2],p.num[3],p.num[4],p.num[5]);
+    // printf("%d %d %d %d %d\n",p.num[0],p.num[1],p.num[2],p.num[3],p.num[4],p.num[5]);
 
 
     //接受輸入的數字
@@ -83,11 +81,11 @@ int main(){
                 p.c[j]=rand()%49+1;
             }
             for(int k=0 , tmp ;k<5;k++){
-                if(p.c[k]>p.c[k+1]){
-                    tmp=p.c[k];
-                    p.c[k]=p.c[k+1];
-                    p.c[k+1]=tmp;
-                }
+                 if(p.c[k]>p.c[k+1]){
+                     tmp=p.c[k];
+                     p.c[k]=p.c[k+1];
+                     p.c[k+1]=tmp;
+                 }
             }
             p.c[6]=rand()%9+1;
             continue;
@@ -124,16 +122,26 @@ int main(){
 
     
     //開始輸出
-    FILE* fp = fopen("lotto.txt","w+");
-    
-    fprintf(fp, "%s"
-                "=======+ No.%d +========\n"
+    FILE* rc = fopen("record.bin","ab+");
+    fprintf(rc, "%s"
+                "=======+ No.%05d +=====\n"
                 "%s"
                 "[1]:%02d %02d %02d %02d %02d %02d %02d\n"
                 "[2]:%02d %02d %02d %02d %02d %02d %02d\n"
                 "[3]:%02d %02d %02d %02d %02d %02d %02d\n"
                 "[4]:%02d %02d %02d %02d %02d %02d %02d\n"
-                "[5]:%02d %02d %02d %02d %02d %02d %02d\n",title,p.num,ctime(&curtime),p.a,p.b,p.c,p.d,p.e);
+                "[5]:%02d %02d %02d %02d %02d %02d %02d\n",title,p.num,ctime(&curtime),p.a[0],p.a[1],p.a[2],p.a[3],p.a[4],p.a[5],p.a[6],p.b[0],p.b[1],p.b[2],p.b[3],p.b[4],p.b[5],p.b[6],p.c[0],p.c[1],p.c[2],p.c[3],p.c[4],p.c[5],p.c[6],p.d[0],p.d[1],p.d[2],p.d[3],p.d[4],p.d[5],p.d[6],p.e[0],p.e[1],p.e[2],p.e[3],p.e[4],p.e[5],p.e[6]);
+    fclose(rc);
+    FILE* fp = fopen("lotto.txt","w+");
+    
+    fprintf(fp, "%s"
+                "=======+ No.%05d +=====\n"
+                "%s"
+                "[1]:%02d %02d %02d %02d %02d %02d %02d\n"
+                "[2]:%02d %02d %02d %02d %02d %02d %02d\n"
+                "[3]:%02d %02d %02d %02d %02d %02d %02d\n"
+                "[4]:%02d %02d %02d %02d %02d %02d %02d\n"
+                "[5]:%02d %02d %02d %02d %02d %02d %02d\n",title,p.num,ctime(&curtime),p.a[0],p.a[1],p.a[2],p.a[3],p.a[4],p.a[5],p.a[6],p.b[0],p.b[1],p.b[2],p.b[3],p.b[4],p.b[5],p.b[6],p.c[0],p.c[1],p.c[2],p.c[3],p.c[4],p.c[5],p.c[6],p.d[0],p.d[1],p.d[2],p.d[3],p.d[4],p.d[5],p.d[6],p.e[0],p.e[1],p.e[2],p.e[3],p.e[4],p.e[5],p.e[6]);
     fclose(fp);
     printf("已為您購買的 %d 組樂透書出至lotto.txt\n",n);
 
