@@ -162,5 +162,5 @@ int main(){
                                                             ,p.e[0],p.e[1],p.e[2],p.e[3],p.e[4],p.e[5],p.e[6]);
     fclose(fp);
     printf("已為您購買的 %d 組樂透書出至lotto.txt\n",n);
-
+    return 0;
 }
