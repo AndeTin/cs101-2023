@@ -6,9 +6,8 @@ void func(int m,int n){
         return func(m,n+1);
     }
     if(n==9 && m<9){
-        n=1;
         printf("\n");
-        return func(m+1,n);
+        return func(m+1,1);
     }
 }
 
