@@ -131,13 +131,13 @@ int main(){
                         p.e[l]=p.e[l+1];
                         p.e[l+1]=tmp;
                     }
-                }
+                
                 }
             }
             p.e[6]=rand()%9+1;
             continue;
         }
-    }
+    
 
     //©R¦WÀÉ®×
     char name[20];
