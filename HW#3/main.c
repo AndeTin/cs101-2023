@@ -60,10 +60,13 @@ int main(){
                 p.a[j]=rand()%49+1;
             }
             for(int k=0 , tmp ;k<5;k++){
-                if(p.a[k]>p.a[k+1]){
-                    tmp=p.a[k];
-                    p.a[k]=p.a[k+1];
-                    p.a[k+1]=tmp;
+                for(int l=0;l<5;l++){
+                    if(p.a[l]>p.a[l+1]){
+                        tmp=p.a[l];
+                        p.a[l]=p.a[l+1];
+                        p.a[l+1]=tmp;
+                    }
+                }
                 }
             }
             p.a[6]=rand()%9+1;
@@ -74,10 +77,12 @@ int main(){
                 p.b[j]=rand()%49+1;
             }
             for(int k=0 , tmp ;k<5;k++){
-                if(p.b[k]>p.b[k+1]){
-                    tmp=p.b[k];
-                    p.b[k]=p.b[k+1];
-                    p.b[k+1]=tmp;
+                for(int l=0;l<5;l++){
+                    if(p.b[l]>p.b[l+1]){
+                        tmp=p.b[l];
+                        p.b[l]=p.b[l+1];
+                        p.b[l+1]=tmp;
+                    }
                 }
             }
             p.b[6]=rand()%9+1;
@@ -88,10 +93,12 @@ int main(){
                 p.c[j]=rand()%49+1;
             }
             for(int k=0 , tmp ;k<5;k++){
-                 if(p.c[k]>p.c[k+1]){
-                     tmp=p.c[k];
-                     p.c[k]=p.c[k+1];
-                     p.c[k+1]=tmp;
+                 for(int l=0;l<5;l++){
+                    if(p.c[l]>p.c[l+1]){
+                        tmp=p.c[l];
+                        p.c[l]=p.c[l+1];
+                        p.c[l+1]=tmp;
+                    }
                  }
             }
             p.c[6]=rand()%9+1;
@@ -102,10 +109,12 @@ int main(){
                 p.d[j]=rand()%49+1;
             }
             for(int k=0 , tmp ;k<5;k++){
-                if(p.d[k]>p.d[k+1]){
-                    tmp=p.d[k];
-                    p.d[k]=p.d[k+1];
-                    p.d[k+1]=tmp;
+                for(int l=0;l<5;l++){
+                    if(p.d[l]>p.d[l+1]){
+                        tmp=p.d[l];
+                        p.d[l]=p.d[l+1];
+                        p.d[l+1]=tmp;
+                    }
                 }
             }
             p.d[6]=rand()%9+1;
@@ -116,10 +125,13 @@ int main(){
                 p.e[j]=rand()%49+1;
             }
             for(int k=0 , tmp ;k<5;k++){
-                if(p.e[k]>p.e[k+1]){
-                    tmp=p.e[k];
-                    p.e[k]=p.e[k+1];
-                    p.e[k+1]=tmp;
+                for(int l=0;l<5;l++){
+                    if(p.e[l]>p.e[l+1]){
+                        tmp=p.e[l];
+                        p.e[l]=p.e[l+1];
+                        p.e[l+1]=tmp;
+                    }
+                }
                 }
             }
             p.e[6]=rand()%9+1;
