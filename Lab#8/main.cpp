@@ -45,12 +45,15 @@ class Fueltank {
             if(v <= m_FueltankCapacity && gas == m_Gas_grade){
                 cout << "Fuel_up: " << v << " Gas_grade: " << gas << endl;
             }
+            return 0;
         }   
         int set_Gas_grade(int Gas_grade){
-
+            m_Gas_grade = Gas_grade;
+            return 0;
         }
         int get_Gas_grade(){
-
+            cout<< m_Gas_grade << endl;
+            return 0;
         }
 
 };
@@ -74,48 +77,24 @@ class Car {
             m_year = z;
             m_MaxSeating = s;
         }
-        int get_MaxSeating(){
-
-        }
-        int get_price(){
-
-        }
-        void set_base(int n){
-
-        }
-        string get_brand(){
-
-        }
-        bool get_EngineStatus(){
-
-        }
-        bool startEngine(){
-
-        }
-        bool stopEngine(){
-
-        }
-        int get_Gas_grade(){
-
-        }
-        int set_Gas_grade(int gas=98){
-
-        }
-        int fuel_up(int v, int gas=98){
-
-        }
 };
 
 class Audi_Car : public Car{
     private:
-        Engine m_Engine;
-        Fueltank m_Fueltank;
+        
 
     public:
+        Engine m_Engine;
+        Fueltank m_Fueltank;
         Audi_Car(string x, int z, int s) : Car(x,z,s){
             cout << "Constructing Audi_Car" << endl;
             }
-        }
+        
 
+};
+
+int main(){
+    Audi_Car car_a("A1", 2021, 5);
+    car_a.m_Fueltank.fuel_up(3000,98);
 }
 
