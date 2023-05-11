@@ -49,6 +49,8 @@ class Fueltank {
         }   
         int set_Gas_grade(int Gas_grade){
             m_Gas_grade = Gas_grade;
+            cout << "Set Gas_grade: "<< Gas_grade;
+            cout << "Audi : Gas_grade ="<< Gas_grade;
             return 0;
         }
         int get_Gas_grade(){
@@ -88,6 +90,7 @@ class Audi_Car : public Car{
         Fueltank m_Fueltank;
         Audi_Car(string x, int z, int s) : Car(x,z,s){
             cout << "Constructing Audi_Car" << endl;
+            cout << "Audi : Gas_grade = 98";
             }
         
 
@@ -95,6 +98,7 @@ class Audi_Car : public Car{
 
 int main(){
     Audi_Car car_a("A1", 2021, 5);
-    car_a.m_Fueltank.fuel_up(3000,98);
+    car_a.m_Fueltank.set_Gas_grade(95);
+    car_a.m_Fueltank.fuel_up(3000,95);
 }
 
