@@ -8,20 +8,19 @@ class ReplaceMyString {
     public:
         string oldString;
         string newString;
-        void replaceString(string oldString, string newString) {
+        void replaceString(string x, string y) {
             ifstream file;
             ofstream newfile;
             file.open("main.cpp");
             newfile.open("rmain.cpp");
             while(!file.eof()){
-                file >> oldString;
-                if(oldString == "IU"){
-                    newfile << newString;
+                getline(file,oldString);
+                size_t found = oldString.find(x);
+                while(found!=string::npos){
+                    oldString.replace(found , x.length() , y);
+                    found = oldString.find(x, found + x.length());
                 }
-                else{
-                    newfile << oldString;
-                }
-                
+                newfile<<oldString<<endl;
             }
             file.close();
             newfile.close();
