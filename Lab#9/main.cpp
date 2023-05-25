@@ -21,7 +21,7 @@ class ReplaceMyString {
                 else{
                     newfile << oldString;
                 }
-                newfile << endl;
+                
             }
             file.close();
             newfile.close();
