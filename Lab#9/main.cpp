@@ -8,13 +8,14 @@ class ReplaceMyString {
     public:
         string oldString;
         string newString;
+        string tmp;
         void replaceString(string oldString, string newString) {
             ifstream file;
             ofstream newfile;
             file.open("main.cpp");
             newfile.open("rmain.cpp");
             while(!file.eof()){
-                file >> oldString;
+                getline(file, tmp);
                 if(oldString == "IU"){
                     newfile << newString;
                 }
